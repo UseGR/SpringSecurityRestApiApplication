@@ -1,0 +1,27 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="1.0.6" author="galeev">
+        <insert tableName="users">
+            <column name="username" value="Rus"/>
+            <column name="email" value="rus@mail.ru"/>
+            <column name="first_name" value="Rustem"/>
+            <column name="last_name" value="Galeev"/>
+            <column name="password" value="$2a$04$k.S7omuw/9QV8L7ukEhkxulWcc83a4Pu023uf6nQK6ZBcEEFAR/Hq"/> <!--            Пароль rus-->
+            <column name="created" value="NOW()"/>
+            <column name="updated" value="NOW()"/>
+            <column name="status" value="ACTIVE"/>
+        </insert>
+
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="1"/>
+        </insert>
+
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="2"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
